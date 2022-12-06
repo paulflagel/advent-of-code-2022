@@ -235,6 +235,17 @@ def day5_2():
     return ret
 
 
+def day6(nb_char):
+    """
+    Résultat 1 : 1109
+    Résultat 2 : 3695
+    """
+    with open('day6.txt') as f:
+        string = f.read().strip()
+    f = lambda msg, n: next(i + n for i in range(len(msg)) if len(set(msg[i:i + n])) == n)
+    return f(string, nb_char)
+
+
 if __name__ == "__main__":
-    ret = day5_2()
+    ret = day6(nb_char=4)
     pprint(ret)
